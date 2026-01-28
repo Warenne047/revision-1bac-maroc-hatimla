@@ -2,25 +2,37 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Francais</title>
+    <title>Français</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Francais</h1>
-    
-  <button onclick="showLaBoiteaMerveilles">La Boîte à merveilles</button>
-  <button onclick="showAntigone()">Antigone</button>
-  <button onclick="showDernieJourDunCondamne()">Dernier jour d’un condamné</button>
-  <div id="LaBoîteàmerveilles" class="resume">
-    <h2>La Boîte à merveilles (Roman autobiographique)</h2>
-  <p>
-      <a href="/Users/smart/Downloads/La Boite a Merveilles.pdf">Télécharger la leçon (PDF)</a>
-    </p>
-  </div>
-  <div id="Antigone" class="resume">
-    <h2>Antigone</h2>
+
+<h1>Français</h1>
+
+<!-- BOUTONS -->
+<button onclick="show('merveilles')">La Boîte à merveilles</button>
+<button onclick="show('antigone')">Antigone</button>
+<button onclick="show('condamne')">Dernier jour d’un condamné</button>
+
+<!-- CONTENU -->
+
+<div id="merveilles" class="resume">
+    <h2>La Boîte à merveilles</h2>
     <p>
-    Prologue
+        Roman autobiographique d’Ahmed Sefrioui.
+        <a href="/Users/smart/Downloads/La Boite a Merveilles.pdf">Télécharger la leçon (PDF)</a>
+    </p>
+    <p>
+        <a href="boite-a-merveilles.pdf" target="_blank">
+            Télécharger la leçon (PDF)
+        </a>
+    </p>
+</div>
+
+<div id="antigone" class="resume">
+    <h2>Antigone – Jean Anouilh</h2>
+    <p>
+        Prologue
 
 Un personnage appelé le Prologue présente tous les personnages et annonce dès le début l’issue tragique : Antigone va mourir.
 ➡️ Le destin est déjà écrit, personne ne pourra l’éviter.
@@ -93,11 +105,12 @@ Loi morale vs loi politique
 Liberté
 
 Mort
-  </p>
-  </div>
-<div id="condamnée" class="resume">
-<h2>Dernier jour d'un condamné, Victor Hugo</h2>
-  <p>
+    </p>
+</div>
+
+<div id="condamne" class="resume">
+    <h2>Le Dernier Jour d’un Condamné – Victor Hugo</h2>
+    <p>
     ➡️ Roman à la première personne
 ➡️ Critique de la peine de mort
 
@@ -161,9 +174,15 @@ Compassion
   </p>
 </div>
 
+<!-- JAVASCRIPT -->
+<script>
+function show(id) {
+    const sections = document.querySelectorAll('.resume');
+    sections.forEach(section => section.style.display = 'none');
 
-
-
+    document.getElementById(id).style.display = 'block';
+}
+</script>
 
 </body>
 </html>
